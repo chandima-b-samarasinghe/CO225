@@ -2,4 +2,4 @@
 "# CO225 Projects"
 
 "# CO225 Labs"
-  -CPU_SIM
+  CPU_SIM
