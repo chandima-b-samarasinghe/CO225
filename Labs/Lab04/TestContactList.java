@@ -18,7 +18,7 @@ public class TestContactList{
 
 	public static void printResults(ArrayList<Contact> result){
 		for(Contact c:result){
-			System.out.println(c.getFname()+"\t"+c.getSname()+"\t"+c.getTel());
+			System.out.println((c.getFname()+" "+c.getSname()+"\t"+c.getTel()).trim());
 		}
 	}
 }
