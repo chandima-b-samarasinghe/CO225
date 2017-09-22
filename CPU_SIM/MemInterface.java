@@ -6,5 +6,3 @@ public interface MemInterface {
     int cacheHits();
     int cacheMisses();
 };
-
-

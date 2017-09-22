@@ -12,12 +12,16 @@ class TestCPU {
 			ProgramFromFile programFromFile=new ProgramFromFile("program.txt");
 			prog=programFromFile.load();
 
+			printRegTitles();
+
 			for(int i=0; i < prog.length; i++) {
 				String [] cmd = cleanIns(prog[i]);
 				cnt.executeInstruction(cmd, regFile);
+				printRegValues(regFile);
 			}
 
-			System.out.println("R3 = " +  regFile.readReg("R3"));
+			
+
 		} catch(IOException e) {
 			System.out.println(e);
 		}
@@ -25,6 +29,18 @@ class TestCPU {
 
     private static String[] cleanIns(String ins){
 		return ins.trim().split("[ ]+");
+	}
+
+	private static void printRegTitles(){
+		for(int i=0;i<8;i++)
+			System.out.print("R"+i+"\t");
+		System.out.println();
+	}
+
+	private static void printRegValues(CPUReg regFile) throws IOException{
+		for(int i=0;i<8;i++)
+			System.out.print(regFile.readReg("R"+i)+"\t");
+		System.out.println();
 	}
 }
 
